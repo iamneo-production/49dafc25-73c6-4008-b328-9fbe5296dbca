@@ -10,10 +10,10 @@ select (count(case when GENDER='female' then 1 end)/count(*))*100 from facebook;
 select (sum(case when GENDER='female' then 1 else 0 end)/count(*)*100) as percentage_of_female_users from facebook;
 /* 5.Write a SQL Query to find the percentage of female users among users above the age 17? */
 select (count(case when GENDER='female' then 1 end)/count(*))*100 from facebook where AGE>17;
-select (sum(case when GENDER='female' then 1 else 0 end)/count(*))*100 from facebook where AGE>17;
+select (sum(case when GENDER='female' then 1 else 0 end)/count(*)*100) from facebook where AGE>17;
 /* Practice Queries */
 select * from facebook;
 select USERID from facebook;
 select AGE from facebook;
-select (count(case when GENDER='female' then 1 end)/count(*))*100 from facebook where AGE<=17;
+select (count(case when GENDER='female' then 1 end)/count(*)*100) from facebook where AGE<=17;
 select (count(case when GENDER='male' then 1 end)/count(*))*100 from facebook;
