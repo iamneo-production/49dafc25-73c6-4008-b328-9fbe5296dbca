@@ -10,3 +10,10 @@ select (sum(case when GENDER='female' then 1 else 0 end)/count(*)*100) as percen
 /* 5.Write a SQL Query to find the percentage of female users among users above the age 17? */
 select (count(case when GENDER='female' and age>17 then 1 end)/count(*))*100 from facebook;
 select (sum(case when GENDER='female' and age>17 then 1 else 0 end)/count(*)*100) as percentage_of_female_users from facebook;
+
+describe plan_table;
+
+/* 1. Creating index for query1 */
+create index social_media_dob_year_idx on facebook(DOB_YEAR);
+explain plan for select count(*) from facebook where DOB_YEAR=1999;
+select * from table(dbms_xplan.display());
