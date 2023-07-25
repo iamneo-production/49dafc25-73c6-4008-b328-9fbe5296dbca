@@ -14,6 +14,15 @@ select (sum(case when GENDER='female' and age>17 then 1 else 0 end)/count(*)*100
 describe plan_table;
 
 /* 1. Creating index for query1 */
-create index social_media_dob_year_idx on facebook(DOB_YEAR);
+/* create index facebook_dob_year_idx on facebook(dob_year); the index has already been created. */
 explain plan for select count(*) from facebook where DOB_YEAR=1999;
+select * from table(dbms_xplan.display());
+
+/* 2. Creating index for query2 */
+create index facebook_age_idx on facebook(AGE);
+explain plan for select AGE,count(*) from facebook group by AGE order by AGE;
+select * from table(dbms_xplan.display());
+
+/* 3. Creating index for query3 */
+explain plan for select count(*) from facebook where age>15;
 select * from table(dbms_xplan.display());
