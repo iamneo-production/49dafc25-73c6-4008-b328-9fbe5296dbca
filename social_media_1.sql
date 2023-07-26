@@ -11,10 +11,12 @@ select (sum(case when GENDER='female' then 1 else 0 end)/count(*)*100) as percen
 select (count(case when GENDER='female' and age>17 then 1 end)/count(*))*100 from facebook;
 select (sum(case when GENDER='female' and age>17 then 1 else 0 end)/count(*)*100) as percentage_of_female_users from facebook;
 
+select * from facebook;
+
 describe plan_table;
 
 /* 1. Creating index for query1 */
-/* create index facebook_dob_year_idx on facebook(dob_year); the index has already been created. */
+create index facebook_dob_year_idx on facebook(userid,age,dob_day,dob_year,dob_month,gender,tenure,friend_count,friendships_initiated,likes,likes_received,mobile_likes,mobile_likes_received,www_likes,www_likes_received);
 explain plan for select count(*) from facebook where DOB_YEAR=1999;
 select * from table(dbms_xplan.display());
 
