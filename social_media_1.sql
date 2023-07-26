@@ -31,5 +31,5 @@ select * from table(dbms_xplan.display());
 
 /* 4. Creating index for query4 */
 create index facebook_percentage_of_female_users_idx on facebook(gender);
-expalin plan for select(sum(case when GENDER='female' then 1 else 0 end)/count(*)*100) as percentage_of_female_users from facebook;
+explain plan for select(sum(case when GENDER='female' then 1 else 0 end)/count(*)*100) as percentage_of_female_users from facebook;
 select * from table(dbms_xplan.display());
