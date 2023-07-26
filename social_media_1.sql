@@ -24,6 +24,7 @@ explain plan for select AGE,count(*) from facebook group by AGE order by AGE;
 select * from table(dbms_xplan.display());
 
 /* 3. Plan explanation of query3 */
+create index facebook_AGE_idx on facebook(age);
 explain plan for select count(*) from facebook where age>15;
 select * from table(dbms_xplan.display());
 
