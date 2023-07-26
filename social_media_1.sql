@@ -11,8 +11,6 @@ select (sum(case when GENDER='female' then 1 else 0 end)/count(*)*100) as percen
 select (count(case when GENDER='female' and age>17 then 1 end)/count(*))*100 from facebook;
 select (sum(case when GENDER='female' and age>17 then 1 else 0 end)/count(*)*100) as percentage_of_female_users from facebook;
 
-select * from facebook;
-
 describe plan_table;
 
 /* 1. Creating index for query1 */
