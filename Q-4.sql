@@ -1,0 +1,2 @@
+select (SUM(CASE WHEN GENDER='female'THEN 1 else 0 end)/count(*)*100) AS FEMALE_PERCENTAGE
+FROM FACEBOOK;
