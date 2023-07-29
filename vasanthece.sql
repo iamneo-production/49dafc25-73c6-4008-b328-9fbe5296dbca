@@ -4,7 +4,7 @@ from facebook
 where dob_year=1999;
 
 --Write a sql query to count the number of social media users for each age group
-select age,count(*)
+select agwore,count(*)
 from facebook
 group by age 
 order by age;
