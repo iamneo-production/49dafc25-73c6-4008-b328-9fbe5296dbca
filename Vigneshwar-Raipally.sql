@@ -8,9 +8,9 @@ select AGE,count(*) from facebook group by AGE order by AGE;
 select count(*) from facebook where AGE>15;
 
 /* 4.Write a SQL Query to find the percentage of female users who are using social media? */
-select (count(case when GENDER='female' then 1 end)/count(*))*100 from facebook;
+select (count(case when GENDER='female' then 1 end)/count(*)*100) from facebook;
 select (sum(case when GENDER='female' then 1 else 0 end)/count(*)*100) as percentage_of_female_users from facebook;
 
 /* 5.Write a SQL Query to find the percentage of female users among users above the age 17? */
-select (count(case when GENDER='female' and age>17 then 1 end)/count(*))*100 from facebook;
+select (count(case when GENDER='female' and age>17 then 1 end)/count(*)*100) from facebook;
 select (sum(case when GENDER='female' and age>17 then 1 else 0 end)/count(*)*100) as percentage_of_female_users from facebook;
