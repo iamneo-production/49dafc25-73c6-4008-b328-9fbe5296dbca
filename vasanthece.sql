@@ -18,7 +18,7 @@ where age>15;
 SELECT (SUM(CASE WHEN GENDER = 'female' THEN 1 ELSE 0 END)  / COUNT(*)*100) AS FEMALE_PERCENTAGE
 FROM FACEBOOK;
 
-----Write a sql query to find the percentage of female users among usersabove the age of 17
+---Write a sql query to find the percentage of female users among usersabove the age of 17
 SELECT (sum(CASE WHEN GENDER = 'female' and AGE>17 THEN 1 ELSE 0 END)  / COUNT(*)*100) AS FEMALE_PERCENTAGE
 FROM FACEBOOK;
 
