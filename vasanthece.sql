@@ -8,7 +8,7 @@ select agwore,count(*)
 from facebook
 group;
 
---Write a sql query to find total users in social media above age 15
+---Write a sql query to find total users in social media above age 15
 select count(*) 
 from facebook
 where age>15;
