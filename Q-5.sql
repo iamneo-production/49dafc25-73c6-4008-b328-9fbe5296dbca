@@ -1,3 +1,0 @@
-select(sum(case when GENDER='Female' THEN 1 ELSE 0 END)/COUNT(*)*100)AS FEMALE_PERCENTAGE
-FROM FACEBOOK
-WHERE age > 17;
