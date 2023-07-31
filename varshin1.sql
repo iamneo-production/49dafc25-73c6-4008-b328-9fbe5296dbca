@@ -16,5 +16,6 @@ where age>15;
 --Sql query to find the percentage of female users who are using social media
 select(sum(case when gender = 'female' then 1 else 0 end) / count(*)*100)as female_percentage from FACEBOOK;
 
+
 --Sql query to find the percentage of female users among users above the age of 17
 select(sum(case when gender = 'female' and age>17 then 1 else 0 end) / count(*)*100) as female_percentage from FACEBOOK;
