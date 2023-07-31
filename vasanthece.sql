@@ -1,4 +1,4 @@
---Write a sql query to find total number of users who where born in the year 1999
+---Write a sql query to find total number of users who where born in the year 1999
 select count(*)
 from facebook
 where dob_year=1999;
